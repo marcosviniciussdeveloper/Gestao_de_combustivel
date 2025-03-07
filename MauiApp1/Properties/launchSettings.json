@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "MauiApp1": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SUPABASE_URL": "https://gemzsiocgszxxlwnofar.supabase.co.",
+        "SUPABASE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdlbXpzaW9jZ3N6eHhsd25vZmFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA5MzQwNjksImV4cCI6MjA1NjUxMDA2OX0.ClbfzIECG3fEueB3_GCaeqvpelwhmuSEqbj0pqUCagQ"
+      }
+    }
+  }
+}

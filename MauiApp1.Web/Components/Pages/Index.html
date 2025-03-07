@@ -1,0 +1,20 @@
+﻿@page "/"
+
+@inject NavigationManager Navigation
+
+<link rel="stylesheet" href="css/Telainical.css" />
+
+<div class="background">
+    <div class="content">
+        <h1>Bem-vindo ao Gestor de Combustível</h1>
+        <p>Gerencie sua frota com eficiência e controle total.</p>
+        <button @onclick="NavigateToDashboard">Acessar</button>
+    </div>
+</div>
+
+@code {
+    private void NavigateToDashboard()
+    {
+        Navigation.NavigateTo("/dashboard");
+    }
+}
