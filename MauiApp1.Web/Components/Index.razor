@@ -1,0 +1,111 @@
+﻿@page "/"
+
+@inject NavigationManager Navigation
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Combustível</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/Site.js"></script>
+    <link rel="stylesheet" href="css/Geral.css" />
+    <link rel="stylesheet" href="/css/Header.css" />
+    <link rel="stylesheet" href="/css/Home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header e Navbar -->
+    <header>
+        <div id="nav-background"></div>
+
+        <nav id="navbar">
+            <i class="fa-solid fa-gas-pump" id="nav_logo"> Meu combustível</i>
+            <ul id="nav_list">
+                <li class="nav-item active"><a href="#home">Início</a></li>
+                <li class="nav-item"><a href="#how-it-works">Como funciona</a></li>
+
+                <li class="nav-item"><a href="#developer-info">Contato</a></li>
+            </ul>
+            <a href="#" class="btn-login">
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item"><a href="#home">Início</a></li>
+                <li class="nav-item"><a href="#Login">Login</a></li>
+                <li class="nav-item"><a href="#developer-info">Contato</a></li>
+            </ul>
+            <button class="btn-default">Login</button>
+        </div>
+    </header>
+
+
+    <section id="home">
+        <div class="container" id="home-content">
+            <div id="cta">
+                <h1 class="title">
+                    Controle Total do <span>Abastecimento</span>
+                </h1>
+
+                <div id="cta_buttons">
+                    <a href="#" class="btn-default">Cadastre sua empresa</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="how-it-works">
+        <h2>Como Funciona</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="icon-container">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <h3>Crie uma conta</h3>
+                <p>Cadastre-se e acesse o sistema rapidamente.</p>
+            </div>
+            <div class="step">
+                <div class="icon-container">
+                    <i class="fa-solid fa-car"></i>
+                </div>
+                <h3>Adicione seus Veículos</h3>
+                <p>Registre informações dos veículos no sistema.</p>
+            </div>
+            <div class="step">
+                <div class="icon-container">
+                    <i class="fa-solid fa-gas-pump"></i>
+                </div>
+                <h3>Registre Abastecimentos</h3>
+                <p>Informe os abastecimentos e visualize relatórios.</p>
+            </div>
+            <div class="step">
+                <div class="icon-container">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Acompanhe Relatórios</h3>
+                <p>Visualize dados precisos sobre consumo e abastecimentos.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Rodapé -->
+    <footer id="developer-info">
+        <p>Desenvolvido por <strong>Marcos Vinicius</strong></p>
+        <p>Email: <a href="mailto:marcosviniciuss.dev@gmail.com">marcosviniciuss.dev@gmail.com</a></p>
+        <p>© 2025 - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

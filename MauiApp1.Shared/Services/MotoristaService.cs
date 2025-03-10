@@ -1,5 +1,5 @@
 ﻿using MauiApp1.Shared.Models;
-using Supabase;
+
 
 
 namespace MauiApp1.Shared.Services

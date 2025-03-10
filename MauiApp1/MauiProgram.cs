@@ -1,6 +1,7 @@
 ﻿using MauiApp1.Shared.Services;
-using MauiApp1.Shared.Services.Interface;
 using Microsoft.Extensions.Logging;
+
+using MauiApp1.Shared.Services.Interface;
 
 namespace MauiApp1;
 
