@@ -19,7 +19,7 @@ public class Abastecimento : BaseModel
     [Column("eh_motorista_id")]
     public Guid MotoristaId { get; set; }
 
-    [Column("veiculo_placa")]
+    [Column("veiculo_placa")]   
     public string VeiculoPlaca { get; set; } = string.Empty;
 
     [Column("km_inicial")]

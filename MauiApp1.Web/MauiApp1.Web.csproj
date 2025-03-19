@@ -8,13 +8,16 @@
 
   <ItemGroup>
     <Content Remove="Components\Pages\Telainicial.razor" />
+    <Content Remove="wwwroot\css\CadastroLogin.cs" />
     <Content Remove="wwwroot\css\Geral.css" />
     <Content Remove="wwwroot\css\Telainical.css" />
     <Content Remove="wwwroot\Index.razor" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Components\Pages\Forms.html" />
     <None Remove="Components\Pages\Index.html" />
+    <None Remove="Components\Pages\Login.html" />
   </ItemGroup>
 
   <ItemGroup>

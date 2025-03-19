@@ -1,0 +1,83 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+
+
+<link rel="stylesheet" href="css/Home.css" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+<header>
+    <nav>
+        <i class="fa-solid fa-gas-pump" id="nav_logo"> Meu combustível</i>
+        <ul id="nav_list">
+            <li class="nav-item active"><a href="#home">Início</a></li>
+            <li class="nav-item"><a href="#how-it-works">Como funciona</a></li>
+            <li class="nav-item"><a href="#developer-info">Contato</a></li>
+        </ul>
+        <button class="nav-btn" @onclick="IrParaLogin">Login</button>
+    </nav>
+</header>
+
+<section id="home">
+    <div class="container" id="home-content">
+        <div id="cta">
+            <h1 class="title">Controle Total do <span>Abastecimento</span></h1>
+            <div id="cta_buttons">
+                <button class="btn-default" @onclick="IrParaCadastro">Cadastre sua empresa</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="how-it-works">
+    <h2>Como Funciona</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="icon-container"><i class="fa-solid fa-user-plus"></i></div>
+            <h3>Crie uma conta</h3>
+            <p>Cadastre-se e acesse o sistema rapidamente.</p>
+        </div>
+        <div class="step">
+            <div class="icon-container"><i class="fa-solid fa-car"></i></div>
+            <h3>Adicione seus Veículos</h3>
+            <p>Registre informações dos veículos no sistema.</p>
+        </div>
+        <div class="step">
+            <div class="icon-container"><i class="fa-solid fa-gas-pump"></i></div>
+            <h3>Registre Abastecimentos</h3>
+            <p>Informe os abastecimentos e visualize relatórios.</p>
+        </div>
+        <div class="step">
+            <div class="icon-container"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Acompanhe Relatórios</h3>
+            <p>Visualize dados precisos sobre consumo e abastecimentos.</p>
+        </div>
+    </div>
+</section>
+
+<section id="benefits">
+    <h2>Por que escolher nosso sistema?</h2>
+    <div class="benefits-container">
+        <div class="benefit-item"><i class="fa-solid fa-check-circle"></i><h3>Controle Total</h3><p>Gerencie abastecimentos em tempo real com precisão.</p></div>
+        <div class="benefit-item"><i class="fa-solid fa-chart-line"></i><h3>Relatórios Detalhados</h3><p>Visualize dados estratégicos para otimizar consumo.</p></div>
+        <div class="benefit-item"><i class="fa-solid fa-clock"></i><h3>Agilidade e Eficiência</h3><p>Reduza custos e tempo com automação inteligente.</p></div>
+    </div>
+</section>
+
+<footer id="developer-info">
+    <p>Desenvolvido por <strong>Marcos Vinicius</strong></p>
+    <p>Email: <a href="mailto:marcosviniciuss.dev@gmail.com">marcosviniciuss.dev@gmail.com</a></p>
+    <p>© 2025 - Todos os direitos reservados.</p>
+</footer>
+
+@code {
+    private void IrParaCadastro()
+    {
+        Navigation.NavigateTo("/cadastro" , forceLoad: true);
+    }
+
+    private void IrParaLogin()
+    {
+        Navigation.NavigateTo("/login");
+    }
+}

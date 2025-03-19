@@ -1,6 +1,5 @@
 ﻿using MauiApp1.Shared.Models;
 using MauiApp1.Shared.Services.Interface;
-using Supabase;
 
 namespace MauiApp1.Shared.Services;
 

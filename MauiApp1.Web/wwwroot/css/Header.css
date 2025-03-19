@@ -24,14 +24,16 @@
 .nav-item.active a {
     color: #DC143C;
     border-bottom: 3px solid #DC143C;
-    padding-bottom: 5px;
+    padding-bottom: 1px;
+    justify-content: center;
+    align-items: center;
 }
 
 #nav_list {
     display: flex;
     list-style: none;
-    margin-right: 30%;
-    gap: 40px;
+    margin-right: 32%;
+    gap: 30px;
     justify-content: center;
     flex: 1;
 }
@@ -54,11 +56,11 @@
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 20px;
+    margin-right:1%;
+    font-size: 25px;
     padding: 8px 12px;
     border-radius: 8px;
     transition: 0.3s ease;
-    margin-right: 20px;
     position: relative;
 }
 

@@ -1,6 +1,27 @@
-﻿namespace MauiApp1.Web.Components.Pages
-{
-    public class Cadastro
+﻿@page "/cadastro"
+@inject NavigationManager Navigation
+
+<head>
+    <link rel="stylesheet" href="css/Cadastro.css" />
+</head>
+
+<h2>Cadastro</h2>
+
+<form>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+<p>
+    Já tem uma conta?
+    <button @onclick="IrParaLogin" class="btn-link">Faça login</button>
+</p>
+
+@code {
+    private void IrParaLogin()
     {
+        Navigation.NavigateTo("/login", forceLoad: true);
     }
 }
