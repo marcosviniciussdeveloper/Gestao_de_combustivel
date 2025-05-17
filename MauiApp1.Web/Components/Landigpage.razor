@@ -1,83 +1,232 @@
-﻿@page "/"
+﻿@page "/Landig"
 @inject NavigationManager Navigation
 
-
-<link rel="stylesheet" href="css/Home.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+<link rel="stylesheet" href="/css/Landing.css">
 
-<header>
-    <nav>
-        <i class="fa-solid fa-gas-pump" id="nav_logo"> Meu combustível</i>
-        <ul id="nav_list">
-            <li class="nav-item active"><a href="#home">Início</a></li>
-            <li class="nav-item"><a href="#how-it-works">Como funciona</a></li>
-            <li class="nav-item"><a href="#developer-info">Contato</a></li>
-        </ul>
-        <button class="nav-btn" @onclick="IrParaLogin">Login</button>
-    </nav>
-</header>
+<!-- Navbar com Bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"><i class="fa-solid fa-gas-pump me-2"></i>Meu Combustível</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto me-4">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#how-it-works">Como funciona</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#benefits">Benefícios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#developer-info">Contato</a>
+                </li>
+            </ul>
+            <button class="btn btn-outline-danger" @onclick="IrParaLogin">
+                <i class="fas fa-sign-in-alt me-2"></i>Login
+            </button>
+        </div>
+    </div>
+</nav>
 
-<section id="home">
-    <div class="container" id="home-content">
-        <div id="cta">
-            <h1 class="title">Controle Total do <span>Abastecimento</span></h1>
-            <div id="cta_buttons">
-                <button class="btn-default" @onclick="IrParaCadastro">Cadastre sua empresa</button>
+<!-- Hero Section -->
+<section id="home" class="hero d-flex align-items-center">
+    <div class="container hero-content">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-text">
+                <h1 class="display-4 fw-bold mb-4">Controle Total do <span class="text-warning">Abastecimento</span></h1>
+                <p class="lead mb-4">Gerencie o consumo de combustível da sua frota com eficiência e precisão. Reduza custos e otimize recursos com nosso sistema completo.</p>
+                <div class="d-flex gap-3">
+                    <button class="btn btn-danger btn-lg" @onclick="IrParaCadastro">
+                        <i class="fas fa-user-plus me-2"></i>Cadastre sua empresa
+                    </button>
+                    <a href="#how-it-works" class="btn btn-warning btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>Saiba mais
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hero-image-container">
+                    <img src="/api/placeholder/600/400" alt="Gestão de combustível" class="img-fluid rounded-4 shadow-lg">
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="how-it-works">
-    <h2>Como Funciona</h2>
-    <div class="steps">
-        <div class="step">
-            <div class="icon-container"><i class="fa-solid fa-user-plus"></i></div>
-            <h3>Crie uma conta</h3>
-            <p>Cadastre-se e acesse o sistema rapidamente.</p>
+<!-- Como Funciona Section -->
+<section id="how-it-works" class="py-5" style="background-color: var(--secondary-light);">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold mb-3">Como Funciona</h2>
+                <p class="lead text-muted">Confira como nosso sistema torna a gestão de combustível simples e eficiente</p>
+            </div>
         </div>
-        <div class="step">
-            <div class="icon-container"><i class="fa-solid fa-car"></i></div>
-            <h3>Adicione seus Veículos</h3>
-            <p>Registre informações dos veículos no sistema.</p>
-        </div>
-        <div class="step">
-            <div class="icon-container"><i class="fa-solid fa-gas-pump"></i></div>
-            <h3>Registre Abastecimentos</h3>
-            <p>Informe os abastecimentos e visualize relatórios.</p>
-        </div>
-        <div class="step">
-            <div class="icon-container"><i class="fa-solid fa-chart-line"></i></div>
-            <h3>Acompanhe Relatórios</h3>
-            <p>Visualize dados precisos sobre consumo e abastecimentos.</p>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm step-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box mb-4">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+                        <h3 class="h5 card-title">Crie uma conta</h3>
+                        <p class="card-text">Cadastre-se e acesse o sistema com segurança rapidamente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm step-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box mb-4">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <h3 class="h5 card-title">Adicione seus Veículos</h3>
+                        <p class="card-text">Registre informações detalhadas dos veículos no sistema.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm step-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box mb-4">
+                            <i class="fa-solid fa-gas-pump"></i>
+                        </div>
+                        <h3 class="h5 card-title">Registre Abastecimentos</h3>
+                        <p class="card-text">Informe os abastecimentos de forma rápida e intuitiva.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm step-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box mb-4">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="h5 card-title">Acompanhe Relatórios</h3>
+                        <p class="card-text">Visualize dados precisos sobre consumo e abastecimentos.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="benefits">
-    <h2>Por que escolher nosso sistema?</h2>
-    <div class="benefits-container">
-        <div class="benefit-item"><i class="fa-solid fa-check-circle"></i><h3>Controle Total</h3><p>Gerencie abastecimentos em tempo real com precisão.</p></div>
-        <div class="benefit-item"><i class="fa-solid fa-chart-line"></i><h3>Relatórios Detalhados</h3><p>Visualize dados estratégicos para otimizar consumo.</p></div>
-        <div class="benefit-item"><i class="fa-solid fa-clock"></i><h3>Agilidade e Eficiência</h3><p>Reduza custos e tempo com automação inteligente.</p></div>
+<!-- Benefits Section -->
+<section id="benefits" class="py-5" style="background-color: var(--primary-light);">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold mb-3">Por que escolher nosso sistema?</h2>
+                <p class="lead text-muted">Benefícios que transformam a gestão da sua frota</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm benefit-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="benefit-icon me-3">
+                                <i class="fa-solid fa-check-circle"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Controle Total</h3>
+                        </div>
+                        <p class="card-text">Gerencie abastecimentos em tempo real com precisão. Tenha visibilidade completa sobre toda sua frota com dados confiáveis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm benefit-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="benefit-icon me-3">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Relatórios Detalhados</h3>
+                        </div>
+                        <p class="card-text">Visualize dados estratégicos para otimizar consumo. Identifique tendências e tome decisões baseadas em informações precisas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm benefit-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="benefit-icon me-3">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Agilidade e Eficiência</h3>
+                        </div>
+                        <p class="card-text">Reduza custos e tempo com automação inteligente. Simplifique processos de registro e análise com nossa interface amigável.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<footer id="developer-info">
-    <p>Desenvolvido por <strong>Marcos Vinicius</strong></p>
-    <p>Email: <a href="mailto:marcosviniciuss.dev@gmail.com">marcosviniciuss.dev@gmail.com</a></p>
-    <p>© 2025 - Todos os direitos reservados.</p>
+<!-- Call to Action Section -->
+<section id="cta" class="py-5 text-white text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Pronto para otimizar o controle da sua frota?</h2>
+                <p class="lead mb-4">Junte-se a centenas de empresas que já economizam tempo e dinheiro com nossa solução.</p>
+                <button class="btn btn-warning btn-lg px-5" @onclick="IrParaCadastro">
+                    Comece agora gratuitamente
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="developer-info" class="py-4 bg-dark text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <p class="mb-0">
+                    © 2025 Meu Combustível - Todos os direitos reservados
+                </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-1">Desenvolvido por <strong>Marcos Vinicius</strong></p>
+                <p class="mb-0">
+                    <a href="mailto:marcosviniciuss.dev@gmail.com" class="text-white text-decoration-none">
+                        <i class="fas fa-envelope me-1"></i>marcosviniciuss.dev@gmail.com
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
+
+
 
 @code {
     private void IrParaCadastro()
     {
-        Navigation.NavigateTo("/cadastro" , forceLoad: true);
+        Navigation.NavigateTo("/cadastro", forceLoad: true);
     }
 
     private void IrParaLogin()
     {
         Navigation.NavigateTo("/login");
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            
+        }
     }
 }
